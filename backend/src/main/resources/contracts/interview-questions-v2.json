@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "InterviewQuestions",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "questions"
+  ],
+  "properties": {
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "category",
+          "question",
+          "suggestedAnswer"
+        ],
+        "properties": {
+          "category": {
+            "type": "string",
+            "enum": [
+              "TECHNICAL",
+              "BEHAVIORAL",
+              "HR",
+              "RESUME",
+              "SYSTEM_DESIGN"
+            ]
+          },
+          "question": {
+            "type": "string",
+            "maxLength": 1500,
+            "minLength": 1
+          },
+          "suggestedAnswer": {
+            "type": "string",
+            "maxLength": 3000,
+            "minLength": 1
+          }
+        }
+      },
+      "maxItems": 12,
+      "minItems": 1
+    }
+  }
+}

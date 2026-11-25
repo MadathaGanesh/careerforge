@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TailoringProposals",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "edits"
+  ],
+  "properties": {
+    "edits": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "originalText",
+          "proposedText",
+          "reason",
+          "evidence"
+        ],
+        "properties": {
+          "originalText": {
+            "type": "string",
+            "maxLength": 2000,
+            "minLength": 8
+          },
+          "proposedText": {
+            "type": "string",
+            "maxLength": 2000,
+            "minLength": 1
+          },
+          "reason": {
+            "type": "string",
+            "maxLength": 2000,
+            "minLength": 1
+          },
+          "evidence": {
+            "type": "string",
+            "maxLength": 2000,
+            "minLength": 1
+          }
+        }
+      },
+      "maxItems": 8
+    }
+  }
+}

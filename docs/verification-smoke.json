@@ -1,0 +1,945 @@
+[
+  {
+    "name": "POST /auth/register",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "Unverified password login blocked",
+    "passed": true,
+    "detail": 403
+  },
+  {
+    "name": "Numeric passwords are rejected instead of coerced",
+    "passed": true,
+    "detail": 400
+  },
+  {
+    "name": "POST /auth/verify-email",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "OTP is single-use",
+    "passed": true,
+    "detail": 401
+  },
+  {
+    "name": "Unicode password retains leading and trailing spaces",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "Trimmed password differs",
+    "passed": true,
+    "detail": 401
+  },
+  {
+    "name": "GET /users/me",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "Password sign-in method displayed",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "GET /resumes",
+    "passed": true,
+    "detail": 401
+  },
+  {
+    "name": "CSRF required",
+    "passed": true,
+    "detail": 403
+  },
+  {
+    "name": "POST /resumes/text",
+    "passed": true,
+    "detail": 422
+  },
+  {
+    "name": "Career Memory consent requires a JSON boolean",
+    "passed": true,
+    "detail": 400
+  },
+  {
+    "name": "Invalid career experience rejected",
+    "passed": true,
+    "detail": 422
+  },
+  {
+    "name": "PUT /users/me/career-memory-preference",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "PUT /users/me/profile",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "GET /users/me",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "Profile save preserves Career Memory preference",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "POST /resumes/text",
+    "passed": true,
+    "detail": 201
+  },
+  {
+    "name": "POST /jobs",
+    "passed": true,
+    "detail": 201
+  },
+  {
+    "name": "Draft resume cannot start analysis",
+    "passed": true,
+    "detail": 409
+  },
+  {
+    "name": "PUT /resume-versions/87ea0b11-46b0-4018-a8be-6b7ad7ef34e2/structured-content",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "Confirmation creates new version",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "GET /resume-versions/87ea0b11-46b0-4018-a8be-6b7ad7ef34e2",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "Original resume version remains intact",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "GET /resume-versions/d131059c-c727-4de3-9526-143db3b950bb",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "Confirmed resume contains attested correction",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "PUT /jobs/e5e6799c-d309-4cbf-84bd-ab6c3f7e70e3/structured-jd",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "Reject malformed corrected JD",
+    "passed": true,
+    "detail": 422
+  },
+  {
+    "name": "POST /analyses",
+    "passed": true,
+    "detail": 202
+  },
+  {
+    "name": "POST /analyses",
+    "passed": true,
+    "detail": 202
+  },
+  {
+    "name": "Analysis request replay returns the same resource",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "Idempotency key cannot be reused with different input",
+    "passed": true,
+    "detail": 409
+  },
+  {
+    "name": "PUT /jobs/e5e6799c-d309-4cbf-84bd-ab6c3f7e70e3/structured-jd",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "Analysis uses immutable JD snapshot and reviewed resume",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "GET /jobs/e5e6799c-d309-4cbf-84bd-ab6c3f7e70e3/analyses",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "Saved job links to its analyses",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "Successful job cannot retry",
+    "passed": true,
+    "detail": 409
+  },
+  {
+    "name": "POST /tailoring-sessions",
+    "passed": true,
+    "detail": 202
+  },
+  {
+    "name": "Tailoring succeeds",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "Pending edits block exports",
+    "passed": true,
+    "detail": 409
+  },
+  {
+    "name": "Pending edits block jake-exports",
+    "passed": true,
+    "detail": 409
+  },
+  {
+    "name": "PATCH /resume-edits/6d89b895-86a7-47d6-b003-c4c7bfcdf8ed",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "Stale revision is rejected",
+    "passed": true,
+    "detail": 409
+  },
+  {
+    "name": "GET /tailoring-sessions/ecb94b2e-7e24-4772-af7b-b2973a59fef7/enhancement-report",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "GET /tailoring-sessions/ecb94b2e-7e24-4772-af7b-b2973a59fef7/recruiter-draft",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "POST /tailoring-sessions/ecb94b2e-7e24-4772-af7b-b2973a59fef7/exports",
+    "passed": true,
+    "detail": 201
+  },
+  {
+    "name": "GET /api/v1/exports/1d306a08-95e8-4e7a-a39c-b4b9d9fd4513/download",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "POST /tailoring-sessions/ecb94b2e-7e24-4772-af7b-b2973a59fef7/exports",
+    "passed": true,
+    "detail": 201
+  },
+  {
+    "name": "GET /api/v1/exports/1028811b-6e28-4e2c-bf52-79e3876a2f12/download",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "POST /tailoring-sessions/ecb94b2e-7e24-4772-af7b-b2973a59fef7/jake-exports",
+    "passed": true,
+    "detail": 201
+  },
+  {
+    "name": "GET /api/v1/jake-exports/78cb9f0b-19af-4741-8013-9d708083e244/download",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "PDF signature",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "DOCX contains exact reviewed text",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "Jake source contains reviewed text",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "GET /export-capabilities",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "Jake PDF capability reports a ready renderer or setup guidance",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "POST /tailoring-sessions/ecb94b2e-7e24-4772-af7b-b2973a59fef7/jake-exports",
+    "passed": true,
+    "detail": 201
+  },
+  {
+    "name": "GET /api/v1/jake-exports/4d43abfd-23c6-4e55-9924-f1cf4b8233bf/download",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "Jake renderer generates valid PDF",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "POST /tailoring-sessions/ecb94b2e-7e24-4772-af7b-b2973a59fef7/exports",
+    "passed": true,
+    "detail": 201
+  },
+  {
+    "name": "Export replay returns same artifact",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "POST /resumes/upload",
+    "passed": true,
+    "detail": 201
+  },
+  {
+    "name": "POST /resumes/upload",
+    "passed": true,
+    "detail": 201
+  },
+  {
+    "name": "POST /resumes/upload",
+    "passed": true,
+    "detail": 415
+  },
+  {
+    "name": "POST /tailoring-sessions/ecb94b2e-7e24-4772-af7b-b2973a59fef7/exports",
+    "passed": true,
+    "detail": 201
+  },
+  {
+    "name": "POST /tailoring-sessions/ecb94b2e-7e24-4772-af7b-b2973a59fef7/exports",
+    "passed": true,
+    "detail": 201
+  },
+  {
+    "name": "POST /tailoring-sessions/ecb94b2e-7e24-4772-af7b-b2973a59fef7/exports",
+    "passed": true,
+    "detail": 201
+  },
+  {
+    "name": "POST /tailoring-sessions/ecb94b2e-7e24-4772-af7b-b2973a59fef7/exports",
+    "passed": true,
+    "detail": 201
+  },
+  {
+    "name": "GET /resumes/1f7dad9c-588a-4f4e-93df-ecfc09493f8f/versions",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "Concurrent exports allocate unique committed version numbers",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "POST /interview-questions/generate",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "POST /interview-sessions",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "POST /interview-sessions/c56d7ed1-7be0-4e52-b8be-1e3ce61b920c/answers",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "Local assessment is unavailable instead of zero",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "POST /jobs",
+    "passed": true,
+    "detail": 201
+  },
+  {
+    "name": "GET /jobs/page",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "GET /jobs/page",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "Cursor advances without repeats",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "GET /jobs/page",
+    "passed": true,
+    "detail": 422
+  },
+  {
+    "name": "Document upload over 10 MiB is blocked",
+    "passed": true,
+    "detail": 413
+  },
+  {
+    "name": "POST /interview-questions/generate",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "Wrong job cannot use the previous interview session",
+    "passed": true,
+    "detail": 404
+  },
+  {
+    "name": "POST /interview-sessions",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "POST /interview-sessions/6722cf61-9c50-4cd1-ab12-b2c8c6d32028/answers",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "POST /interview-sessions/c56d7ed1-7be0-4e52-b8be-1e3ce61b920c/complete",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "GET /interview-sessions/c56d7ed1-7be0-4e52-b8be-1e3ce61b920c",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "Saved interview answers include the question",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "POST /applications",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "PATCH /applications/ea18d2bd-dc4e-4838-b0e3-b45795b322ab",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "PATCH /applications/ea18d2bd-dc4e-4838-b0e3-b45795b322ab",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "PATCH /applications/ea18d2bd-dc4e-4838-b0e3-b45795b322ab",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "PATCH /applications/ea18d2bd-dc4e-4838-b0e3-b45795b322ab",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "Application patch retains omitted stage and salary",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "POST /applications",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "GET /applications/page",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "GET /applications/page",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "Tracker cursor returns both saved applications in order",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "GET /offers/compare",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "Malformed reminder time rejected",
+    "passed": true,
+    "detail": 422
+  },
+  {
+    "name": "POST /reminders",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "Reminder update requires explicit completion state",
+    "passed": true,
+    "detail": 422
+  },
+  {
+    "name": "PATCH /reminders/50b42321-87ac-4770-bc1f-5cab3794c31c",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "POST /salary-estimates",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "Salary estimate reports insufficient evidence",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "Reversed salary range rejected",
+    "passed": true,
+    "detail": 422
+  },
+  {
+    "name": "Salary outside the database precision rejected",
+    "passed": true,
+    "detail": 422
+  },
+  {
+    "name": "Invalid currency format rejected",
+    "passed": true,
+    "detail": 422
+  },
+  {
+    "name": "Impossible salary observation date rejected",
+    "passed": true,
+    "detail": 400
+  },
+  {
+    "name": "Salary source requires a public web URL",
+    "passed": true,
+    "detail": 422
+  },
+  {
+    "name": "POST /salary-observations",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "POST /salary-observations",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "POST /salary-observations",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "POST /salary-estimates",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "Salary arithmetic",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "POST /career-facts",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "PATCH /career-facts/40b780c8-4bca-445e-80d4-cec748d2a591",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "GET /dashboard/summary",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "GET /insights",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "GET /search",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "GET /subscription",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "GET /notifications",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "GET /notifications/unread-count",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "Non-admin cannot send notifications",
+    "passed": true,
+    "detail": 403
+  },
+  {
+    "name": "GET /privacy/data-export",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "Privacy export includes career facts, answers, versions and proposal history",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "Privacy manifest excludes password and provider credentials",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "GET /privacy/data-export/archive",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "Privacy archive contains user manifest and original/generated files",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "POST /auth/dev",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "Owner isolation resumes",
+    "passed": true,
+    "detail": 404
+  },
+  {
+    "name": "Owner isolation resume-versions",
+    "passed": true,
+    "detail": 404
+  },
+  {
+    "name": "Owner isolation jobs",
+    "passed": true,
+    "detail": 404
+  },
+  {
+    "name": "Owner isolation analyses",
+    "passed": true,
+    "detail": 404
+  },
+  {
+    "name": "Owner isolation tailoring-sessions",
+    "passed": true,
+    "detail": 404
+  },
+  {
+    "name": "Owner isolation applications",
+    "passed": true,
+    "detail": 404
+  },
+  {
+    "name": "Owner isolation interview-sessions",
+    "passed": true,
+    "detail": 404
+  },
+  {
+    "name": "Owner isolation exports",
+    "passed": true,
+    "detail": 404
+  },
+  {
+    "name": "Owner isolation jake-exports",
+    "passed": true,
+    "detail": 404
+  },
+  {
+    "name": "Permanent resume deletion requires ownership",
+    "passed": true,
+    "detail": 404
+  },
+  {
+    "name": "Edit decisions require ownership",
+    "passed": true,
+    "detail": 404
+  },
+  {
+    "name": "Missing API route returns 404",
+    "passed": true,
+    "detail": 404
+  },
+  {
+    "name": "POST /auth/login",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "POST /auth/forgot-password",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "POST /auth/reset-password",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "GET /auth/session",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "GET /auth/session",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "Reset revokes all previous sessions",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "Reset token is single-use",
+    "passed": true,
+    "detail": 401
+  },
+  {
+    "name": "POST /auth/login",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "POST /auth/login",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "POST /users/me/change-password",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "GET /auth/session",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "Change-password revokes the other session",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "POST /users/me/email-change",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "GET /users/me",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "Email changes only after verification",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "POST /users/me/email-change/confirm",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "GET /users/me",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "Verified email change applied",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "POST /auth/login",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "Login abuse bound is enforced",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "Signed fixture webhook accepted",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "Signed webhook event replay deduplicated",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "Unsigned webhook is rejected",
+    "passed": true,
+    "detail": 400
+  },
+  {
+    "name": "POST /resumes/text",
+    "passed": true,
+    "detail": 201
+  },
+  {
+    "name": "PUT /resume-versions/a7dff8d7-a68e-415c-9c53-e68665ce3118/structured-content",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "POST /jobs",
+    "passed": true,
+    "detail": 201
+  },
+  {
+    "name": "Concurrent FREE quota accepts exactly three requests",
+    "passed": true,
+    "detail": [
+      202,
+      202,
+      202,
+      429,
+      429,
+      429,
+      429,
+      429,
+      429,
+      429,
+      429,
+      429
+    ]
+  },
+  {
+    "name": "DELETE /resumes/1f7dad9c-588a-4f4e-93df-ecfc09493f8f",
+    "passed": true,
+    "detail": 204
+  },
+  {
+    "name": "Archived resume hidden",
+    "passed": true,
+    "detail": 404
+  },
+  {
+    "name": "Archive retains historic export",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "POST /resumes/1f7dad9c-588a-4f4e-93df-ecfc09493f8f/restore",
+    "passed": true,
+    "detail": 204
+  },
+  {
+    "name": "Restore re-enables resume",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "DELETE /resumes/1f7dad9c-588a-4f4e-93df-ecfc09493f8f/permanent",
+    "passed": true,
+    "detail": 204
+  },
+  {
+    "name": "Permanent deletion removes exports",
+    "passed": true,
+    "detail": 404
+  },
+  {
+    "name": "Permanent deletion removes derived analysis",
+    "passed": true,
+    "detail": 404
+  },
+  {
+    "name": "GET /applications/ea18d2bd-dc4e-4838-b0e3-b45795b322ab",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "Application survives resume deletion",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "Populated account including interview answers deletes successfully",
+    "passed": true,
+    "detail": 204
+  },
+  {
+    "name": "GET /auth/session",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "GET /auth/session",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "Deleted account sessions are rejected",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "POST /auth/logout",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "GET /auth/session",
+    "passed": true,
+    "detail": 200
+  },
+  {
+    "name": "Logout revokes session",
+    "passed": true,
+    "detail": null
+  }
+]

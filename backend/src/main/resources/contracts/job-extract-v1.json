@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "JobExtraction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "jobTitle",
+    "requirements",
+    "responsibilities"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "enum": [
+        "job-extract-v1"
+      ]
+    },
+    "jobTitle": {
+      "type": "string",
+      "maxLength": 250,
+      "minLength": 0
+    },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "label",
+          "priority",
+          "sourceQuote"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1
+          },
+          "label": {
+            "type": "string",
+            "maxLength": 250,
+            "minLength": 1
+          },
+          "priority": {
+            "type": "string",
+            "enum": [
+              "MANDATORY",
+              "PREFERRED"
+            ]
+          },
+          "sourceQuote": {
+            "type": "string",
+            "maxLength": 2000,
+            "minLength": 1
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "MANDATORY",
+              "EXPERIENCE",
+              "RESPONSIBILITIES",
+              "PREFERRED",
+              "EDUCATION"
+            ]
+          }
+        }
+      },
+      "maxItems": 200
+    },
+    "responsibilities": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 2000,
+        "minLength": 1
+      },
+      "maxItems": 150
+    },
+    "minExperienceYears": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 80
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "GEMINI",
+        "LOCAL_HEURISTIC"
+      ]
+    }
+  }
+}

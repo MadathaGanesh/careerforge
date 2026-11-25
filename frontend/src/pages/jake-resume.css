@@ -1,0 +1,16 @@
+.jake-enhancement { display: grid; gap: 13px; margin-top: 12px; }
+.jake-section-title h2 { margin-bottom: 5px; }
+.jake-muted { font-size: .83rem; color: var(--muted); line-height: 1.55; display: flex; gap: 6px; align-items: start; }
+.jake-table-wrap { overflow-x: auto; }
+.jake-score-table { width: 100%; }
+.jake-positive { color: var(--accent); font-weight: 700; }
+.jake-negative { color: var(--danger); font-weight: 700; }
+.jake-reasons { padding-inline-start: 24px; margin: 0; display: grid; gap: 10px; }
+.jake-reasons li { padding-inline-start: 4px; overflow-wrap: anywhere; }
+.jake-reasons li p { margin: 6px 0; }
+.jake-email-form { display: grid; gap: 11px; }
+.jake-export-history { padding-top: 11px; display: flex; gap: 7px; flex-wrap: wrap; align-items: center; }
+.jake-export-history h4 { width: 100%; margin: 0; }
+@media (max-width: 700px) {
+  .jake-score-table th, .jake-score-table td { padding: 8px 6px; }
+}

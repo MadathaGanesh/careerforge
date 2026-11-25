@@ -1,0 +1,68 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: careerforge
+      POSTGRES_USER: careerforge
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-careerforge_dev_password}
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-h", "127.0.0.1", "-U", "careerforge", "-d", "careerforge"]
+      interval: 5s
+      retries: 15
+  backend:
+    build: ./backend
+    environment:
+      DB_URL: jdbc:postgresql://postgres:5432/careerforge
+      DB_USER: careerforge
+      DB_PASSWORD: ${DB_PASSWORD:-careerforge_dev_password}
+      JWT_SECRET: ${JWT_SECRET:?Set a strong Base64 32-byte secret in .env}
+      SPRING_PROFILES_ACTIVE: local
+      DEV_AUTH_ENABLED: ${DEV_AUTH_ENABLED:-false}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
+      SERPAPI_API_KEY: ${SERPAPI_API_KEY:-}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-2.5-flash}
+      APP_ORIGIN: ${APP_ORIGIN:-http://localhost:5173}
+      COOKIE_SECURE: ${COOKIE_SECURE:-false}
+      STORAGE_ROOT: /app/storage
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY:-}
+      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET:-}
+      STRIPE_PRICE_PRO: ${STRIPE_PRICE_PRO:-}
+      MAIL_HOST: ${MAIL_HOST:-mailpit}
+      MAIL_PORT: ${MAIL_PORT:-1025}
+      MAIL_FROM: ${MAIL_FROM:-noreply@careerforge.local}
+    ports:
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - files_data:/app/storage
+    depends_on:
+      postgres:
+        condition: service_healthy
+      mailpit:
+        condition: service_started
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_DEMO_LOGIN: ${DEV_AUTH_ENABLED:-false}
+    ports:
+      - "127.0.0.1:5173:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+        restart: true
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1/actuator/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+  mailpit:
+    image: axllent/mailpit:latest
+    ports:
+      - "127.0.0.1:8025:8025"
+volumes:
+  pg_data:
+  files_data:
+

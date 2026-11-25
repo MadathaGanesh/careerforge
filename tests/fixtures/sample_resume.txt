@@ -1,0 +1,15 @@
+Sample Candidate
+Backend Developer | India
+
+EXPERIENCE
+Example Software Company — Java Backend Developer
+- Built and maintained REST APIs using Java and Spring Boot.
+- Used PostgreSQL to write and optimize queries.
+- Participated in code reviews and unit testing with JUnit.
+
+SKILLS
+Java, Spring Boot, PostgreSQL, REST APIs, Git, JUnit
+
+EDUCATION
+Bachelor's Degree (synthetic example)
+

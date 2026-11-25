@@ -1,0 +1,43 @@
+.topbar { position: sticky; top: 0; z-index: 25; display: flex; align-items: center; justify-content: space-between; min-width: 0; gap: 11px; padding: 0 27px; }
+.top-right { display: flex; align-items: center; gap: 8px; }
+.mobile-brand, .cf-search-wrap .mobile-search { display: none; }
+.cf-search-wrap { position: relative; min-width: 0; width: min(425px,100%); }
+.cf-search-form { display: flex; align-items: center; gap: 8px; border: 1px solid var(--line); border-radius: 9px; padding: 0 8px; color: var(--muted); background: #f5f8f6; }
+.cf-search-form input { background: none; border: 0; min-height: 39px; padding: 5px; }
+.cf-search-form button { border: 0; border-radius: 7px; padding: 5px 7px; color: var(--accent); background: var(--mint); font-size: .75rem; }
+.cf-search-form button:disabled { display: none; }
+.cf-menu-wrap { position: relative; }
+.icon-button, .cf-profile-button { display: inline-flex; align-items: center; justify-content: center; gap: 7px; color: var(--ink); background: white; border: 1px solid var(--line); min-width: 40px; min-height: 40px; border-radius: 9px; padding: 0 7px; }
+.cf-profile-button { font-size: .81rem; font-weight: 700; }
+.avatar { display: grid; place-items: center; width: 27px; height: 27px; border-radius: 50%; background: var(--mint); color: var(--accent); font-size: .72rem; }
+.top-user { max-width: 180px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+.cf-bell { position: relative; }
+.cf-notice-count { position: absolute; top: 1px; right: 2px; font-size: .63rem; line-height: 15px; min-width: 15px; border-radius: 8px; background: var(--accent); color: #fff; }
+.cf-floating { background: #fff; color: var(--ink); position: absolute; z-index: 30; border: 1px solid var(--line); border-radius: 11px; box-shadow: 0 13px 36px #18342824; top: calc(100% + 7px); right: 0; padding: 10px; }
+.cf-search-results { left: 0; width: min(100vw - 20px,100%); display: grid; gap: 3px; }
+.cf-search-results a, .cf-account-dropdown a, .cf-account-dropdown button { padding: 7px; border-radius: 6px; }
+.cf-search-results a:hover, .cf-account-dropdown a:hover, .cf-account-dropdown button:hover { background: var(--mint); text-decoration: none; }
+.cf-search-results a > small { display: block; }
+.cf-account-dropdown { min-width: 152px; display: grid; }
+.cf-account-dropdown a, .cf-account-dropdown button { background: #fff; border: 0; color: var(--ink); text-align: start; display: flex; align-items: center; gap: 8px; font-size: .83rem; }
+.cf-notification-panel { width: min(390px,calc(100vw - 25px)); max-height: min(70vh,520px); overflow: auto; }
+.cf-panel-head { display: flex; justify-content: space-between; align-items: center; gap: 6px; margin-bottom: 8px; }
+.cf-panel-head .icon-button { min-height: 32px; min-width: 32px; }
+.cf-notification-list { display: grid; margin: 8px 0; gap: 5px; }
+.cf-notice { display: flex; align-items: start; justify-content: space-between; text-align: start; padding: 9px; gap: 7px; color: var(--ink); background: white; border: 1px solid var(--line); border-radius: 8px; width: 100%; overflow-wrap: anywhere; }
+.cf-notice.unread { background: #f1f8f4; }
+.cf-notice > span:first-child { display: grid; gap: 3px; min-width: 0; font-size: .8rem; }
+.cf-see-all { justify-content: space-between; margin-top: 6px; }
+.cf-dialog { width: min(460px,calc(100% - 24px)); padding: 17px; border: 1px solid var(--line); border-radius: 13px; color: var(--ink); }
+.cf-dialog::backdrop { background: #132c2695; }
+.cf-dialog-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+@media (max-width: 700px) {
+  .topbar { padding: 0 10px; justify-content: flex-start; }
+  .mobile-brand { display: block; margin-right: auto; }
+  .cf-search-wrap { width: auto; }
+  .cf-search-form, .cf-search-results, .top-user { display: none; }
+  .cf-search-wrap .mobile-search { display: inline-flex; }
+  .top-right { gap: 5px; }
+  .icon-button, .cf-profile-button { min-height: 36px; min-width: 35px; padding: 0 4px; }
+  .cf-notification-panel { right: -39px; }
+}

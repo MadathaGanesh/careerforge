@@ -1,0 +1,11 @@
+Company: Example Software Company
+Role: Java Backend Engineer
+Location: Hyderabad, India
+
+We are looking for a Java Backend Engineer who will build REST APIs and collaborate with cross-functional teams. Candidates should have hands-on experience with Java, Spring Boot, relational databases including PostgreSQL, and Git.
+
+Requirements:
+- Mandatory: Java, Spring Boot, REST APIs, PostgreSQL, Git.
+- Preferred: Docker, Kafka, Kubernetes and GCP.
+- Responsibilities: develop secure backend services, write tests, improve performance, review code, and troubleshoot production incidents.
+

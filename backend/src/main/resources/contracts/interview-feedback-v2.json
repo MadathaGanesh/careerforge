@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "InterviewFeedback",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "score",
+    "strengths",
+    "improvements",
+    "suggestedAnswer"
+  ],
+  "properties": {
+    "score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "strengths": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 1000,
+        "minLength": 1
+      },
+      "maxItems": 20
+    },
+    "improvements": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 1000,
+        "minLength": 1
+      },
+      "maxItems": 20
+    },
+    "suggestedAnswer": {
+      "type": "string",
+      "maxLength": 3000,
+      "minLength": 1
+    }
+  }
+}

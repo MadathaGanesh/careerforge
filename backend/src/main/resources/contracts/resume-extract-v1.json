@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ResumeExtraction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "candidate",
+    "skills",
+    "experiences",
+    "warnings"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "enum": [
+        "resume-extract-v1"
+      ]
+    },
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "headline"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "maxLength": 200,
+          "minLength": 0
+        },
+        "headline": {
+          "type": "string",
+          "maxLength": 300,
+          "minLength": 0
+        }
+      }
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 120,
+        "minLength": 1
+      },
+      "maxItems": 200
+    },
+    "experiences": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "company",
+          "role",
+          "achievements"
+        ],
+        "properties": {
+          "company": {
+            "type": "string",
+            "maxLength": 200,
+            "minLength": 0
+          },
+          "role": {
+            "type": "string",
+            "maxLength": 200,
+            "minLength": 0
+          },
+          "achievements": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 2000,
+              "minLength": 1
+            },
+            "maxItems": 100
+          }
+        }
+      },
+      "maxItems": 100
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 1000,
+        "minLength": 1
+      },
+      "maxItems": 100
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "GEMINI",
+        "LOCAL_HEURISTIC"
+      ]
+    }
+  }
+}

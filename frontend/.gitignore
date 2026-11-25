@@ -1,0 +1,110 @@
+
+# ============================================================
+# CareerForge AI - Root Git Ignore
+# React + Vite + Java + Spring Boot + PostgreSQL
+# ============================================================
+
+# ENVIRONMENT VARIABLES AND PRIVATE CONFIGURATION
+**/.env
+**/.env.*
+!**/.env.example
+!**/.env.*.example
+**/.envrc
+
+# Local Spring Boot configuration containing private values
+**/application-local.yml
+**/application-local.yaml
+**/application-local.properties
+**/application-secrets.yml
+**/application-secrets.yaml
+**/application-secrets.properties
+**/application-private.yml
+**/application-private.yaml
+**/application-private.properties
+
+# JAVA / SPRING BOOT / MAVEN / GRADLE
+**/target/
+**/build/
+**/.gradle/
+*.class
+
+# INTELLIJ IDEA / VS CODE / ECLIPSE
+**/.idea/
+*.iml
+**/.vscode/
+**/.settings/
+**/.classpath
+**/.project
+**/.factorypath
+
+# REACT / VITE / NODE.JS
+**/node_modules/
+**/dist/
+**/coverage/
+**/.nyc_output/
+**/.vite/
+**/.cache/
+*.tsbuildinfo
+
+# PLAYWRIGHT TEST OUTPUT
+**/playwright-report/
+**/test-results/
+**/blob-report/
+
+# RESUMES / USER UPLOADS / GENERATED DOCUMENTS
+**/storage/
+**/uploads/
+**/generated-resumes/
+**/generated-exports/
+**/private-documents/
+
+# LOG FILES
+**/logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# TEMPORARY FILES
+*.pid
+*.hprof
+hs_err_pid*
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# LOCAL DATABASES AND BACKUPS
+*.sqlite
+*.sqlite3
+*.db
+*.dump
+*.backup
+*.sql.gz
+*.tar.gz
+
+# PRIVATE CERTIFICATES / KEYS
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+id_rsa*
+id_ed25519*
+
+# LATEX COMPILATION TEMPORARY FILES
+*.aux
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.toc
+*.out
+
+# WINDOWS / MACOS
+.DS_Store
+Thumbs.db
+desktop.ini
+

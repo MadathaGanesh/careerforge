@@ -1,0 +1,91 @@
+server:
+  port: ${PORT:8080}
+  forward-headers-strategy: native
+  servlet:
+    session:
+      cookie:
+        http-only: true
+spring:
+  http:
+    converters:
+      preferred-json-mapper: jackson2
+  jmx:
+    enabled: ${OPERATIONS_JMX_ENABLED:false}
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/careerforge}
+    username: ${DB_USER:careerforge}
+    password: ${DB_PASSWORD:careerforge_dev_password}
+    hikari:
+      maximum-pool-size: 5
+  task:
+    scheduling:
+      pool:
+        size: 4
+  flyway:
+    enabled: true
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 11MB
+  mail:
+    host: ${MAIL_HOST:localhost}
+    port: ${MAIL_PORT:1025}
+    username: ${MAIL_USERNAME:}
+    password: ${MAIL_PASSWORD:}
+    properties:
+      mail.smtp.connectiontimeout: 5000
+      mail.smtp.timeout: 5000
+      mail.smtp.writetimeout: 5000
+      mail.smtp.ssl.checkserveridentity: true
+      mail.smtp.auth: ${MAIL_AUTH:false}
+      mail.smtp.starttls.required: ${MAIL_STARTTLS_REQUIRED:false}
+      mail.smtp.starttls.enable: ${MAIL_STARTTLS:false}
+management:
+  endpoints:
+    jmx:
+      exposure:
+        include: health,metrics
+    web:
+      exposure:
+        include: health,info
+app:
+  jwt-secret: ${JWT_SECRET:}
+  salary-search-key: ${SERPAPI_API_KEY:}
+  salary-search-url: ${SALARY_SEARCH_URL:https://serpapi.com/search.json}
+  google-client-id: ${GOOGLE_CLIENT_ID:}
+  gemini-key: ${GEMINI_API_KEY:}
+  gemini-model: ${GEMINI_MODEL:gemini-2.5-flash}
+  dev-auth: ${DEV_AUTH_ENABLED:false}
+  public-origin: ${APP_ORIGIN:http://localhost:5173}
+  cookie-secure: ${COOKIE_SECURE:false}
+  storage-root: ${STORAGE_ROOT:./storage}
+  storage-bucket: ${STORAGE_BUCKET:}
+  storage-prefix: ${STORAGE_PREFIX:careerforge/}
+  storage-region: ${STORAGE_REGION:us-east-1}
+  storage-endpoint: ${STORAGE_ENDPOINT:}
+  storage-path-style: ${STORAGE_PATH_STYLE:false}
+  pdf-font-path: ${PDF_FONT_PATH:}
+  latex-command: ${LATEX_COMMAND:pdflatex}
+  mail-from: ${MAIL_FROM:noreply@localhost}
+  clamav-host: ${CLAMAV_HOST:}
+  clamav-port: ${CLAMAV_PORT:3310}
+
+  notification-zone: ${NOTIFICATION_ZONE:Asia/Kolkata}
+  notification-poll-ms: ${NOTIFICATION_POLL_MS:60000}
+  stripe-reconcile-ms: ${STRIPE_RECONCILE_MS:3600000}
+
+stripe:
+  secret-key: ${STRIPE_SECRET_KEY:}
+  webhook-secret: ${STRIPE_WEBHOOK_SECRET:}
+  price-pro: ${STRIPE_PRICE_PRO:}
+
+logging:
+  level:
+    root: INFO
+    com.careerforge: INFO
+    com.careerforge.ai.AiWorker: INFO
+    com.careerforge.core.Db: INFO
+    com.careerforge.core.ReminderScheduler: INFO
+    org.springframework.mail: INFO
+    com.careerforge.security: INFO
+    org.springframework.security: INFO
